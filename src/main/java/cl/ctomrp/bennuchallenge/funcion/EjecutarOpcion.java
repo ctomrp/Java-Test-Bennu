@@ -17,9 +17,9 @@ public final class EjecutarOpcion {
         archivo.createNewFile();
     }
     
-    public static ArrayList<Integer> generadorNumeros(int cantidadNumeros){
+    public static List<Integer> generadorNumeros(int cantidadNumeros){
         Random numeroAleatorio = new Random();
-        ArrayList<Integer> listaNumeros = new ArrayList<>();  
+        List<Integer> listaNumeros = new ArrayList<>();  
         
         for(int i = 0; i < cantidadNumeros; i++){
             int aleatorio = numeroAleatorio.nextInt(10);
@@ -28,7 +28,7 @@ public final class EjecutarOpcion {
         return listaNumeros;
     }
     
-    public static void escribirNumerosEnArchivo(String nombreArchivo, ArrayList<Integer> listaNumeros) throws IOException{
+    public static void escribirNumerosEnArchivo(String nombreArchivo, List<Integer> listaNumeros) throws IOException{
         FileWriter escritor = new FileWriter(nombreArchivo);
         
         for(int numero : listaNumeros){
@@ -49,9 +49,9 @@ public final class EjecutarOpcion {
         System.out.println(lista);
     }
     
-    public static ArrayList<Integer> ordenarConSort(String nombreArchivo) throws IOException{
+    public static List<Integer> ordenarConSort(String nombreArchivo) throws IOException{
         BufferedReader lector = new BufferedReader(new FileReader(nombreArchivo));
-        ArrayList<Integer> listaNumeros = new ArrayList<>();        
+        List<Integer> listaNumeros = new ArrayList<>();        
         String linea = lector.readLine();
         
         while(linea != null){
@@ -64,9 +64,9 @@ public final class EjecutarOpcion {
         return listaNumeros;
     }
     
-    public static ArrayList<Integer> ordenarConBubbleSort(String nombreArchivo) throws IOException{
+    public static List<Integer> ordenarConBubbleSort(String nombreArchivo) throws IOException{
         BufferedReader lector = new BufferedReader(new FileReader(nombreArchivo));
-        ArrayList<Integer> listaNumeros = new ArrayList<>();        
+        List<Integer> listaNumeros = new ArrayList<>();        
         String linea = lector.readLine();
         
         while(linea != null){
@@ -94,7 +94,7 @@ public final class EjecutarOpcion {
     }
 
     public static boolean buscarNumero(int numero, String nombreArchivo) throws IOException {
-        ArrayList<Integer> numbers = ordenarConSort(nombreArchivo);
+        List<Integer> numbers = ordenarConSort(nombreArchivo);
         
         return numbers.contains(numero);
     }
