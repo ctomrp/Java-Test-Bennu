@@ -4,7 +4,7 @@ import cl.ctomrp.bennuchallenge.funcion.EjecutarOpcion;
 import cl.ctomrp.bennuchallenge.funcion.VerMenu;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public final class ControladorMenu {
@@ -28,7 +28,7 @@ public final class ControladorMenu {
                 switch (op) {
                     case 1:
                         EjecutarOpcion.crearArchivo("archivoNumerosAleatorios.txt");
-                        ArrayList<Integer> listaNumeros = EjecutarOpcion.generadorNumeros(10);
+                        List<Integer> listaNumeros = EjecutarOpcion.generadorNumeros(10);
                         EjecutarOpcion.escribirNumerosEnArchivo("archivoNumerosAleatorios.txt", listaNumeros);
                         System.out.println("Se creó un archivo en la carpeta del proyecto.\n");
                         break;
